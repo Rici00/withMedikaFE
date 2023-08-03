@@ -290,8 +290,8 @@ function AppDemo() {
               <div>2019</div>
               <div>2021</div>
               <div>2022</div>
-              <div className="font-semibold text-cyan-600">'23</div>
-              <div className="font-semibold text-cyan-600">'24</div>
+              <div className="font-semibold text-cyan-600">23</div>
+              <div className="font-semibold text-cyan-600">24</div>
             </div>
             <div className="mt-3 rounded-lg bg-gray-50 ring-1 ring-inset ring-black/5">
               <Chart
