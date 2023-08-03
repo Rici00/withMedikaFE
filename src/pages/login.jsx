@@ -34,8 +34,8 @@ export default function Login() {
                     }
                 });
             // ✅ Success ??
-            const data = await res ? .data;
-            if (data ? .status == true) {
+            const data = await res ?.data;
+            if (data ?.status == true) {
                 setMessage(data.message)
                 console.log(data)
                     // ✅ Save user info to localStorage
@@ -51,60 +51,51 @@ export default function Login() {
         }
     }, [user])
 
-    return ( <
+    return (
+      <>
+        <Head>
+          <title>Masuk sebagai tenaga kesehatan</title>
+        </Head>
+        <AuthLayout
+          title="Masuk ke Akun Khusus"
+          subtitle={
+            <>
+              Buat akun posyandu/pihak kesehatan?{' '}
+              <Link href="/register" className="text-cyan-600">
+                Daftar
+              </Link>{' '}
+            </>
+          }
         >
-        <
-        Head >
-        <
-        title > Masuk sebagai tenaga kesehatan < /title> <
-        /Head> <
-        AuthLayout title = "Masuk ke Akun Khusus"
-        subtitle = { <
-            >
-            Buat akun posyandu / pihak kesehatan ? { ' ' } <
-            Link href = "/register"
-            className = "text-cyan-600" >
-            Daftar <
-            /Link>{' '} <
-            />
-        } >
-        {
-            message && ( <
-                h3 className = "text-red-500 font-semibold py-2 text-center" > { message } < /h3>
-            )
-        } <
-        form onSubmit = { Login } >
-        <
-        div className = "space-y-6" >
-        <
-        TextField onChange = {
-            (e) => setEmail(e.target.value) }
-        label = "Email address"
-        id = "email"
-        name = "email"
-        type = "email"
-        autoComplete = "email"
-        required /
-        >
-        <
-        TextField onChange = {
-            (e) => setPass(e.target.value) }
-        label = "Password"
-        id = "password"
-        name = "password"
-        type = "password"
-        autoComplete = "current-password"
-        required /
-        >
-        <
-        /div> <
-        Button type = "submit"
-        color = "cyan"
-        className = "mt-8 w-full" >
-        Masuk <
-        /Button> <
-        /form> <
-        /AuthLayout> <
-        />
+        { message && (
+          <h3 className="text-red-500 font-semibold py-2 text-center">{message}</h3>
+        )}
+          <form onSubmit={ Login }>
+            <div className="space-y-6">
+              <TextField
+                onChange={ (e) => setEmail( e.target.value )}
+                label="Email address"
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+              />
+              <TextField
+                onChange={ (e) => setPass( e.target.value )}
+                label="Password"
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+              />
+            </div>
+            <Button type="submit" color="cyan" className="mt-8 w-full">
+              Masuk
+            </Button>
+          </form>
+        </AuthLayout>
+      </>
     )
-}
+  }
