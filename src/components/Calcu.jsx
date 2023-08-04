@@ -600,6 +600,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     const [alamat, setAlamat] = useState();
     const [jenisKelamin, setJenisKelamin] = useState('Laki-laki');
     const [tinggiBadan, setTinggiBadan] = useState();
+    const [beratBadan, setBeratBadan] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
     // const [isShowResult, setIsShowResult] = useState(false);
     const resultRef = useRef(null);
@@ -635,7 +636,8 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         anak: anak,
         ibu: ibu,
         alamat:alamat,
-        hasilPenilaian: hasilPenilaian
+        hasilPenilaian: hasilPenilaian,
+        beratBadan: beratBadan,
       };
     
       
@@ -733,6 +735,19 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
   </div>
+
+  <div className="mb-4">
+    <label htmlFor="beratBadan" className="block font-medium text-gray-700">Berat Badan (KG):</label>
+    <input
+      type="number"
+      id="beratBadan"
+      value={beratBadan}
+      onChange={(e) => setBeratBadan(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+
   <div className="mb-4">
     <label htmlFor="alamat" className="block font-medium text-gray-700">Alamat : </label>
     <input
