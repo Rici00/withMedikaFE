@@ -6,13 +6,13 @@ const features = [
   {
     name: 'Menu Sarapan',
     description:
-      'Nasi Putih,Telur Dadar, Sayur bayam, Segelas susu ',
+      'Nasi Putih, Telur Dadar, Sayur Bayam, Segelas Susu ',
     icon: DeviceArrowIcon,
   },
   {
     name: 'Menu Siang',
     description:
-      'Nasi putih, Ikan bakar/goreng, Sayur asem, Tempe orek',
+      'Nasi Putih, Ikan Bakar/Goreng, Sayur Asem, Tempe Orek',
     icon: DeviceCardsIcon,
   },
   {

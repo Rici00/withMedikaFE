@@ -804,7 +804,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 What are the symptoms?
+            😷 Apa Gejalanya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.symptoms.map((symptom, idx) => {
@@ -827,7 +827,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            Bagaimana Cara Mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.precautions.map((precaution, idx) => {
@@ -851,7 +851,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              👨‍⚕️ Apa Yang Seharusnya Dilakukan??
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataStunting.doctors.map((doctor, idx) => {
@@ -873,13 +873,13 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         data-aos="fade"
         data-aos-duration="1000"
         className="col-span-5 text-b-lg text-center italic text-neutral-50 mt-8 animate-pulse duration-1000"
       >
         Note that this result is not 100% accurate. For further helps, please refer to the nearest health care.
-      </div>
+      </div> */}
       </div>
     </>
   ) 
@@ -953,7 +953,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            Bagaimana Cara Mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.precautions.map((precaution, idx) => {
@@ -977,7 +977,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              Apa Yang Seharusnya Dilakukan??
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataNormal.doctors.map((doctor, idx) => {
@@ -999,13 +999,13 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         data-aos="fade"
         data-aos-duration="1000"
         className="col-span-5 text-b-lg text-center italic text-neutral-50 mt-8 animate-pulse duration-1000"
       >
         Note that this result is not 100% accurate. For further helps, please refer to the nearest health care.
-      </div>
+      </div> */}
       </div>
     </>
   )
@@ -1078,7 +1078,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            Bagaimana Cara Mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataSeverestunting.precautions.map((precaution, idx) => {
@@ -1102,7 +1102,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              👨‍⚕️ Apa Yang Seharusnya Dilakukan??
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataSeverestunting.doctors.map((doctor, idx) => {
@@ -1124,13 +1124,13 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         data-aos="fade"
         data-aos-duration="1000"
         className="col-span-5 text-b-lg text-center italic text-neutral-50 mt-8 animate-pulse duration-1000"
       >
         Note that this result is not 100% accurate. For further helps, please refer to the nearest health care.
-      </div>
+      </div> */}
       </div>
     </>
   ) : null}

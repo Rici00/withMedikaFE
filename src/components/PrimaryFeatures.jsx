@@ -173,7 +173,7 @@ function WikiScreen({ custom, animated = false }) {
   return (
     <AppScreen className="w-full  h-full md:translate-y-12">
       <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
-        <div className="px-8 py-8 pt-12">
+        <div className="px-8 py-8 pt-12 text-sm md:text-lg">
           <div className="space-y-4">
             {[
               { label: 'Stunted', value: 'Kondisi pertumbuhan fisik dan perkembangan anak terhambat, sehingga tinggi badan kurang.' },
