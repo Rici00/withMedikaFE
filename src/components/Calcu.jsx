@@ -689,17 +689,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
   </div>
-  <div className="mb-4">
-    <label htmlFor="ibu" className="block font-medium text-gray-700">Nama Ibu : </label>
-    <input
-      type="text"
-      id="ibu"
-      value={ibu}
-      onChange={(e) => setIbu(e.target.value)}
-      required
-      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
-    />
-  </div>
+  
   <div className="mb-4">
     <label htmlFor="umur" className="block font-medium text-gray-700">Umur (bulan):</label>
     <input
@@ -727,12 +717,24 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
   </div>
 
   <div className="mb-4">
-    <label htmlFor="tinggiBadan" className="block font-medium text-gray-700">Tinggi Badan (cm):</label>
+    <label htmlFor="alamat" className="block font-medium text-gray-700">Alamat : </label>
     <input
-      type="number"
-      id="tinggiBadan"
-      value={tinggiBadan}
-      onChange={(e) => setTinggiBadan(e.target.value)}
+      type="text"
+      id="alamat"
+      value={alamat}
+      onChange={(e) => setAlamat(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+
+  <div className="mb-4">
+    <label htmlFor="ibu" className="block font-medium text-gray-700">Nama Ibu : </label>
+    <input
+      type="text"
+      id="ibu"
+      value={ibu}
+      onChange={(e) => setIbu(e.target.value)}
       required
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
@@ -749,6 +751,18 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
   </div>
+  
+  <div className="mb-4">
+    <label htmlFor="tinggiBadan" className="block font-medium text-gray-700">Tinggi Badan (cm):</label>
+    <input
+      type="number"
+      id="tinggiBadan"
+      value={tinggiBadan}
+      onChange={(e) => setTinggiBadan(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
 
   <div className="mb-4">
     <label htmlFor="lingkarLenganAtas" className="block font-medium text-gray-700">Lingkar Lengan Atas (cm):</label>
@@ -757,18 +771,6 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       id="lingkarLenganAtas"
       value={lingkarLenganAtas}
       onChange={(e) => setLingkarLenganAtas(e.target.value)}
-      required
-      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
-    />
-  </div>
-
-  <div className="mb-4">
-    <label htmlFor="alamat" className="block font-medium text-gray-700">Alamat : </label>
-    <input
-      type="text"
-      id="alamat"
-      value={alamat}
-      onChange={(e) => setAlamat(e.target.value)}
       required
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
