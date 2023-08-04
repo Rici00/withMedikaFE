@@ -601,6 +601,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     const [jenisKelamin, setJenisKelamin] = useState('Laki-laki');
     const [tinggiBadan, setTinggiBadan] = useState();
     const [beratBadan, setBeratBadan] = useState();
+    const [lingkarLenganAtas, setLingkarLenganAtas] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
     // const [isShowResult, setIsShowResult] = useState(false);
     const resultRef = useRef(null);
@@ -638,6 +639,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         alamat:alamat,
         hasilPenilaian: hasilPenilaian,
         beratBadan: beratBadan,
+        lingkarLenganAtas: lingkarLenganAtas
       };
     
       
@@ -737,12 +739,24 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
   </div>
 
   <div className="mb-4">
-    <label htmlFor="beratBadan" className="block font-medium text-gray-700">Berat Badan (KG):</label>
+    <label htmlFor="beratBadan" className="block font-medium text-gray-700">Berat Badan (kg):</label>
     <input
       type="number"
       id="beratBadan"
       value={beratBadan}
       onChange={(e) => setBeratBadan(e.target.value)}
+      required
+      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
+    />
+  </div>
+
+  <div className="mb-4">
+    <label htmlFor="lingkarLenganAtas" className="block font-medium text-gray-700">Lingkar Lengan Atas (cm):</label>
+    <input
+      type="number"
+      id="lingkarLenganAtas"
+      value={lingkarLenganAtas}
+      onChange={(e) => setLingkarLenganAtas(e.target.value)}
       required
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
