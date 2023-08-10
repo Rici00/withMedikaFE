@@ -804,7 +804,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Apa Gejalanya??
+            😷 Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.symptoms.map((symptom, idx) => {
@@ -930,7 +930,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Apa Gejalanya??
+            😷 Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.symptoms.map((symptom, idx) => {
