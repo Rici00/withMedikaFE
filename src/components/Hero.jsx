@@ -10,6 +10,7 @@ import { PhoneFrame } from '@/components/PhoneFrame'
 import logoMandalika from '@/images/logos/Mmandalika.png'
 import logoUGM from '@/images/logos/UGM.png'
 import logoKKN from '@/images/logos/KKN.png'
+import logoLoteng from '@/images/logos/Loteng.png'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -371,6 +372,7 @@ export function Hero() {
                 ['UGM', logoUGM],
                 ['KKN', logoKKN],
                 ['Mandalika', logoMandalika],
+                ['Kabupaten Lombok Tengah', logoLoteng],
               ].map(([name, logo, className]) => (
                 <li key={name} className={clsx('flex', className)}>
                   {/* <Image src={logo} alt={name} className="h-25" unoptimized /> */}

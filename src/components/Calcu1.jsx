@@ -24,7 +24,7 @@ const dataStunting = {
 }
 
 const dataSeverestunting = {
-  name: 'Severely Stunted',
+  name: 'Sangat Pendek',
   description: ['Severely Stunted atau sangat pendek adalah masalah pertumbuhan fisik yang sangat terhambat pada anak-anak, terutama pada usia balita. Stunting merupakan istilah yang digunakan untuk menggambarkan tinggi badan anak yang jauh di bawah tinggi badan normal yang seharusnya mereka capai pada usia tertentu.'],
   symptoms: ['Malnutrisi kronis', 'Kurangnya asupan gizi selama 1000 hari pertama kehidupan', 'Infeksi dan penyakit','Gizi buruk selama masa kehamilan','Air bersih dan sanitasi yang buruk'],
   precautions: ['Peningkatan gizi selama kehamilan', 'Pemberian MP-ASI tepat waktu dan adekuat', 'Pemberian ASI eksklusif', 'Pemberian makanan yang seimbang dan bergizi','Pelayanan kesehatan yang berkualitas'],
@@ -617,7 +617,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       // Tentukan status gizi
       let hasilPenilaian;
       if (zScore < -3) {
-        hasilPenilaian = 'Severely Stunted';
+        hasilPenilaian = 'Sangat Pendek';
       } else if (zScore >= -3 && zScore < -2) {
         hasilPenilaian = 'Stunted';
       } else if (zScore >= -2) {
@@ -764,7 +764,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
-          {hasilPenilaian}
+          Anak Anda Terdeteksi {hasilPenilaian}
         </span>{' '}
         🔍
       </h1>
@@ -804,7 +804,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Kemungkinan Penyebabnya??
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.symptoms.map((symptom, idx) => {
@@ -890,7 +890,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
-          {hasilPenilaian}
+        Anak Anda Terdeteksi {hasilPenilaian}
         </span>{' '}
         🔍
       </h1>
@@ -930,7 +930,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Kemungkinan Penyebabnya??
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.symptoms.map((symptom, idx) => {
@@ -1009,15 +1009,14 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       </div>
     </>
   )
-  : hasilPenilaian === 'Severely Stunted' ? (
+  : hasilPenilaian === 'Sangat Pendek' ? (
     <>
     <div classname="">
       <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
         🔎{' '}
         <span className="text-transparent bg-clip-text bg-black capitalize">
-          {hasilPenilaian}
+        Anak Anda Terdeteksi {hasilPenilaian}
         </span>{' '}
-        🔍
       </h1>
 
         <div className="md:text-h1 text-h2 font-bold mb-16 text-center drop-shadow-2xl">
@@ -1026,7 +1025,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            🤔 Apa Itu Severely Stunted??
+            🤔 Apa Itu Kondisi Sangat Pendek??
           </h2>
           <p
             className="text-b-lg font-thin text-neutral-100"
@@ -1055,7 +1054,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Apa Gejalanya??
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataSeverestunting.symptoms.map((symptom, idx) => {

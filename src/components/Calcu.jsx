@@ -603,12 +603,21 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     const [beratBadan, setBeratBadan] = useState();
     const [lingkarLenganAtas, setLingkarLenganAtas] = useState();
     const [hasilPenilaian, setHasilPenilaian] = useState('');
+    const [clickTime, setClickTime] = useState('');
     // const [isShowResult, setIsShowResult] = useState(false);
     const resultRef = useRef(null);
 
+    function getClickTime() {
+      const currentTime = new Date().toLocaleString();
+      setClickTime(currentTime);
+    }
+
     async function handleSubmit(event) {
       event.preventDefault();
-    
+
+      getClickTime();
+
+      
       // Konversi input ke dalam tipe data angka
       const umurNum = parseInt(umur, 10);
       const tinggiBadanNum = parseFloat(tinggiBadan);
@@ -619,7 +628,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       // Tentukan status gizi
       let hasilPenilaian;
       if (zScore < -3) {
-        hasilPenilaian = 'Severely Stunted';
+        hasilPenilaian = 'Sangat Pendek';
       } else if (zScore >= -3 && zScore < -2) {
         hasilPenilaian = 'Stunted';
       } else if (zScore >= -2) {
@@ -627,7 +636,10 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       }
     
       setHasilPenilaian(hasilPenilaian);
-    
+          // Set waktu saat tombol ditekan
+
+
+
       const data = {
         No: "INCREMENT",
         
@@ -639,10 +651,12 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         alamat:alamat,
         hasilPenilaian: hasilPenilaian,
         beratBadan: beratBadan,
-        lingkarLenganAtas: lingkarLenganAtas
+        lingkarLenganAtas: lingkarLenganAtas,
+        clickTime: clickTime
       };
     
-      
+
+
       try {
         const response = await axios.post('https://sheetdb.io/api/v1/j6jufalz1dchy', {
           data: [data] // Wrap the data object inside an array as the 'data' property
@@ -663,6 +677,8 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
         console.error(error);
       }
       resultRef.current.scrollIntoView({ behavior: 'smooth', duration: '0' });
+      
+
     }
     return (
       <section
@@ -783,6 +799,8 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     Hitung
   </button>
 </form>
+{/* <p>Waktu tombol ditekan: {clickTime}</p> */}
+{/* console.log({clickTime}); */}
 
   
         {/* {hasilPenilaian && <p>Hasil Penilaian Gizi: {hasilPenilaian}</p>} */}
@@ -835,7 +853,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 What are the symptoms?
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.symptoms.map((symptom, idx) => {
@@ -858,7 +876,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            😷 Bagaimana Cara Mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataStunting.precautions.map((precaution, idx) => {
@@ -882,7 +900,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              👨‍⚕️ Apa Yang Seharusnya Dilakukan
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataStunting.doctors.map((doctor, idx) => {
@@ -961,7 +979,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Kemungkinan Penyebabnya??
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.symptoms.map((symptom, idx) => {
@@ -984,7 +1002,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            😷 Bagaimana Cara Mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.precautions.map((precaution, idx) => {
@@ -1008,7 +1026,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              👨‍⚕️ Apa Yang Seharusnya Dilakukan??
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataNormal.doctors.map((doctor, idx) => {
@@ -1040,7 +1058,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       </div>
     </>
   )
-  : hasilPenilaian === 'Severely Stunted' ? (
+  : hasilPenilaian === 'Sangat Pendek' ? (
     <>
     <div classname="">
       <h1 className="md:text-5xl text-4xl font-bold mb-16 text-center">
@@ -1057,7 +1075,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            🤔 Apa Itu Severely Stunted??
+            🤔 Apa Itu Kondisi Sangat Pendek??
           </h2>
           <p
             className="text-b-lg font-thin text-neutral-100"
@@ -1086,7 +1104,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Kemungkinan Penyebabnya??
+            😷 Apa Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataSeverestunting.symptoms.map((symptom, idx) => {
@@ -1109,7 +1127,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 How to prevent it from getting worse?
+            😷 Bagaimana Cara mencegahnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataSeverestunting.precautions.map((precaution, idx) => {
@@ -1133,7 +1151,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
               data-aos="fade"
               data-aos-duration="500"
             >
-              👨‍⚕️ Where should I check it?
+              👨‍⚕️ Apa Yang Seharusnya Dilakukan??
             </h2>
             <div className="flex md:flex-row flex-col gap-4">
               {dataSeverestunting.doctors.map((doctor, idx) => {
