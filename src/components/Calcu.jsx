@@ -568,7 +568,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
   
     // Ambil standar TB sesuai umur
     let stdTB = standarTB[umur].tb;
-    console.log("Nilai stdTB: " + stdTB);
+    // console.log("Nilai stdTB: " + stdTB);
     
     // Ambil nilai standar deviasi berdasarkan umur dan tinggi badan anak
     let deviasi;
@@ -578,8 +578,8 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       deviasi = standarTB[umur].sdp1;
     }
     
-    console.log("Nilai deviasi: " + deviasi);
-    console.log  ("tb:" + tinggiBadan);
+    // console.log("Nilai deviasi: " + deviasi);
+    // console.log  ("tb:" + tinggiBadan);
   
     // Hitung z-score
     let zScore;
@@ -751,7 +751,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-400 focus:ring focus:ring-cyan-200"
     />
   </div>
-  
+
   <div className="mb-4">
     <label htmlFor="tinggiBadan" className="block font-medium text-gray-700">Tinggi Badan (cm):</label>
     <input
@@ -961,7 +961,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Apa Gejalanya??
+            😷 Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataNormal.symptoms.map((symptom, idx) => {
@@ -1086,7 +1086,7 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            😷 Apa Gejalanya??
+            😷 Kemungkinan Penyebabnya??
           </h2>
           <div className="flex flex-wrap gap-3">
             {dataSeverestunting.symptoms.map((symptom, idx) => {
