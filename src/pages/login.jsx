@@ -58,14 +58,14 @@ export default function Login() {
         </Head>
         <AuthLayout
           title="Masuk ke Akun Khusus"
-          // subtitle={
-          //   <>
-          //     Buat akun posyandu/pihak kesehatan?{' '}
-          //     <Link href="/register" className="text-cyan-600">
-          //       Daftar
-          //     </Link>{' '}
-          //   </>
-          // }
+          subtitle={
+            <>
+              Buat akun posyandu/pihak kesehatan?{' '}
+              <Link href="/register" className="text-cyan-600">
+                Daftar
+              </Link>{' '}
+            </>
+          }
         >
         { message && (
           <h3 className="text-red-500 font-semibold py-2 text-center">{message}</h3>
