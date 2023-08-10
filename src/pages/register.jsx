@@ -26,7 +26,7 @@ export default function Register() {
     e.preventDefault()
     const about_us = e.target.children[0].children[4].children[1].value
     // ✅ Request with post method to register api
-    const res = await axios.post("http://127.0.0.1:3001/register", { first_name:firstN, last_name:lastN, email, password:pass, about_us })
+    const res = await axios.post("https://tiny-blue-hedgehog-hem.cyclic.app/register", { first_name:firstN, last_name:lastN, email, password:pass, about_us })
       .catch((err) => console.log(err)); // ✅ Handle error request
     // ✅ Success ??
     const data = await res?.data;
