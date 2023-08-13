@@ -607,15 +607,16 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
     // const [isShowResult, setIsShowResult] = useState(false);
     const resultRef = useRef(null);
 
-    function getClickTime() {
-      const currentTime = new Date().toLocaleString();
-      setClickTime(currentTime);
-    }
+
 
     async function handleSubmit(event) {
       event.preventDefault();
-
+      function getClickTime() {
+        const currentTime = new Date().toLocaleString();
+        setClickTime(currentTime);
+      }
       getClickTime();
+
 
       
       // Konversi input ke dalam tipe data angka
@@ -678,9 +679,10 @@ function hitungZScoreTB(umur, jenisKelamin, tinggiBadan) {
       }
       resultRef.current.scrollIntoView({ behavior: 'smooth', duration: '0' });
       
-
+      
     }
     return (
+      
       <section
       id="calcu"
       aria-labelledby="calcu"
